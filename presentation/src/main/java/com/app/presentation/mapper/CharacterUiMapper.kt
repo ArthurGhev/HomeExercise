@@ -1,13 +1,13 @@
-package com.app.data.mapper
+package com.app.presentation.mapper
 
 import com.app.common.Mapper
-import com.app.data.model.CharacterDataModel
 import com.app.domain.entity.CharacterEntityModel
+import com.app.presentation.model.CharacterUiModel
 import javax.inject.Inject
 
-class CharacterDataMapper @Inject constructor() : Mapper<CharacterDataModel, CharacterEntityModel> {
-    override fun from(i: CharacterDataModel?): CharacterEntityModel {
-        return CharacterEntityModel(
+class CharacterUiMapper @Inject constructor() : Mapper<CharacterEntityModel, CharacterUiModel> {
+    override fun from(i: CharacterEntityModel?): CharacterUiModel {
+        return CharacterUiModel(
             id = i?.id,
             name = i?.name,
             species = i?.species,
@@ -16,8 +16,8 @@ class CharacterDataMapper @Inject constructor() : Mapper<CharacterDataModel, Cha
         )
     }
 
-    override fun to(o: CharacterEntityModel?): CharacterDataModel {
-        return CharacterDataModel(
+    override fun to(o: CharacterUiModel?): CharacterEntityModel {
+        return CharacterEntityModel(
             id = o?.id,
             name = o?.name,
             species = o?.species,

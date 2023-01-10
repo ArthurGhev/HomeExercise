@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">HomeExerciseApp</string>
     <string name="app_version">App Version %1$s</string>
+    <string name="name">Name</string>
+    <string name="gender">Gender</string>
+    <string name="species">Species</string>
+    <string name="try_again">try again</string>
+    <string name="re_try">retry</string>
+    <string name="check_network_msg">Check your network connection</string>
+
 </resources>

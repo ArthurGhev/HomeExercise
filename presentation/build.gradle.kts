@@ -81,6 +81,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
 
+    // paging
+    implementation ("androidx.paging:paging-runtime:3.1.1")
+    implementation ("androidx.paging:paging-common:3.1.1")
 
     // hilt
     implementation("com.google.dagger:hilt-android:2.42")

@@ -8,6 +8,7 @@ import javax.inject.Inject
 class CharacterRemoteMapper @Inject constructor() : Mapper<ResultsModel, CharacterDataModel> {
     override fun from(i: ResultsModel?): CharacterDataModel {
         return CharacterDataModel(
+            id = i?.id,
             name = i?.name,
             species = i?.species,
             gender = i?.species,
@@ -17,7 +18,7 @@ class CharacterRemoteMapper @Inject constructor() : Mapper<ResultsModel, Charact
 
     override fun to(o: CharacterDataModel?): ResultsModel {
         return ResultsModel(
-            id = null,
+            id = o?.id,
             name = o?.name,
             status = null,
             species = o?.species,

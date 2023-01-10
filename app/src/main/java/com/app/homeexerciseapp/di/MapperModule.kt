@@ -4,6 +4,8 @@ import com.app.common.Mapper
 import com.app.data.mapper.CharacterDataMapper
 import com.app.data.model.CharacterDataModel
 import com.app.domain.entity.CharacterEntityModel
+import com.app.presentation.mapper.CharacterUiMapper
+import com.app.presentation.model.CharacterUiModel
 import com.app.remote.mapper.CharacterRemoteMapper
 import com.app.remote.model.ResultsModel
 import dagger.Binds
@@ -21,7 +23,7 @@ abstract class MapperModule {
     @Binds
     abstract fun bindsUserDomainMapper(mapper: CharacterDataMapper) : Mapper<CharacterDataModel, CharacterEntityModel>
 
-//    @Binds
-//    abstract fun bindsUserDomainUiMapper(mapper : UserDomainUiMapper) : Mapper<UserEntityModel, UserUiModel>
+    @Binds
+    abstract fun bindsUserDomainUiMapper(mapper : CharacterUiMapper) : Mapper<CharacterEntityModel, CharacterUiModel>
 
 }

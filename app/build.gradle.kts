@@ -83,4 +83,14 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
     implementation("androidx.navigation:navigation-dynamic-features-fragment:2.5.3")
+
+    // paging
+    implementation ("androidx.paging:paging-runtime:3.1.1")
+    implementation ("androidx.paging:paging-common:3.1.1")
+
+    // glide
+    implementation ("com.github.bumptech.glide:glide:4.13.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.10.0")
+
+
 }

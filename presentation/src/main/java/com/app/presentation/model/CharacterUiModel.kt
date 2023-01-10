@@ -1,6 +1,6 @@
-package com.app.data.model
+package com.app.presentation.model
 
-data class CharacterDataModel(
+data class CharacterUiModel(
     val id: Int?,
     val name: String?,
     val species: String?,
