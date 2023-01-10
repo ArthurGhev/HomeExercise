@@ -19,5 +19,5 @@ abstract class RepositoryModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun provideUserRepository(repository: CharacterRepositoryImpl): CharacterRepository
+    abstract fun provideCharacterRepository(repository: CharacterRepositoryImpl): CharacterRepository
 }

@@ -19,7 +19,6 @@ import com.app.homeexerciseapp.databinding.FragmentCharactersBinding
 import com.app.homeexerciseapp.extenstion.isNetworkAvailable
 import com.app.homeexerciseapp.ui.recyclerview.CharactersAdapter
 import com.app.homeexerciseapp.ui.recyclerview.LoadMoreAdapter
-import com.app.presentation.contract.CharactersContract
 import com.app.presentation.viewmodel.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

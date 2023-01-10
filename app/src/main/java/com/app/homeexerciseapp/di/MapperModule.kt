@@ -18,12 +18,12 @@ import dagger.hilt.components.SingletonComponent
 abstract class MapperModule {
 
     @Binds
-    abstract fun bindsUserRemoteMapper(mapper: CharacterRemoteMapper) : Mapper<ResultsModel, CharacterDataModel>
+    abstract fun bindsCharacterRemoteMapper(mapper: CharacterRemoteMapper) : Mapper<ResultsModel, CharacterDataModel>
 
     @Binds
-    abstract fun bindsUserDomainMapper(mapper: CharacterDataMapper) : Mapper<CharacterDataModel, CharacterEntityModel>
+    abstract fun bindsCharacterDomainMapper(mapper: CharacterDataMapper) : Mapper<CharacterDataModel, CharacterEntityModel>
 
     @Binds
-    abstract fun bindsUserDomainUiMapper(mapper : CharacterUiMapper) : Mapper<CharacterEntityModel, CharacterUiModel>
+    abstract fun bindsCharacterDomainUiMapper(mapper : CharacterUiMapper) : Mapper<CharacterEntityModel, CharacterUiModel>
 
 }
