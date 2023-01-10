@@ -60,6 +60,7 @@ dependencies {
 
     implementation(project(mapOf("path" to ":presentation")))
     implementation(project(mapOf("path" to ":base")))
+    implementation(project(mapOf("path" to ":remote")))
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.5.1")
@@ -69,4 +70,10 @@ dependencies {
     // hilt
     implementation("com.google.dagger:hilt-android:2.42")
     kapt("com.google.dagger:hilt-android-compiler:2.42")
+
+
+    // retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
 }
