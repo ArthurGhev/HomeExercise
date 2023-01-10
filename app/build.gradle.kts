@@ -58,9 +58,12 @@ android {
 
 dependencies {
 
+    implementation(project(mapOf("path" to ":domain")))
+    implementation(project(mapOf("path" to ":data")))
+    implementation(project(mapOf("path" to ":remote")))
+    implementation(project(mapOf("path" to ":common")))
     implementation(project(mapOf("path" to ":presentation")))
     implementation(project(mapOf("path" to ":base")))
-    implementation(project(mapOf("path" to ":remote")))
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.5.1")
