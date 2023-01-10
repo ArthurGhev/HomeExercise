@@ -1,7 +1,6 @@
 package com.app.homeexerciseapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -10,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,8 +37,6 @@ class CharactersFragment  : BaseFragment<FragmentCharactersBinding>() {
     @Inject
     lateinit var charactersAdapter: CharactersAdapter
 
-    private var characteImage = ""
-
     override fun prepareView(savedInstanceState: Bundle?) {
         if (!requireContext().isNetworkAvailable()) {
             Toast.makeText(
@@ -57,16 +55,18 @@ class CharactersFragment  : BaseFragment<FragmentCharactersBinding>() {
                 )
             )
         }
-
-
     }
 
     private fun setAdapter() {
         charactersAdapter.setOnItemClickListener { character ->
-            character.image?.let {
-                characteImage = it
-                Log.d("TestImageUrl", "url $characteImage" )
-               // viewModel.setEvent(UsersContract.Event.GetUserRepoCount(characteImage))
+            character.let { characterModel ->
+                val image: String = characterModel.image ?: ""
+                val name: String = characterModel.name ?: ""
+                findNavController().navigate(
+                    CharactersFragmentDirections.actionCharactersFragmentToImageFragment(
+                        name, image
+                    )
+                )
             }
         }
 
@@ -110,23 +110,6 @@ class CharactersFragment  : BaseFragment<FragmentCharactersBinding>() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.characters.collect {
                     charactersAdapter.submitData(it)
-                }
-            }
-        }
-
-
-        viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.effect.collect {
-                    when (it) {
-                        is CharactersContract.Effect.ShowError -> {
-                            Toast.makeText(
-                                requireContext(),
-                                it.message,
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
-                    }
                 }
             }
         }

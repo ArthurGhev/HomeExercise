@@ -7,5 +7,20 @@
     <fragment
         android:id="@+id/charactersFragment"
         android:name="com.app.homeexerciseapp.ui.CharactersFragment"
-        android:label="CharactersFragment" />
+        android:label="CharactersFragment" >
+        <action
+            android:id="@+id/action_charactersFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.app.homeexerciseapp.ui.ImageFragment"
+        android:label="ImageFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+    </fragment>
 </navigation>

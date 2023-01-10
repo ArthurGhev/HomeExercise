@@ -1,7 +1,6 @@
 package com.app.homeexerciseapp.ui.recyclerview
 
 
-import com.bumptech.glide.Glide
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -36,12 +35,6 @@ class CharactersAdapter @Inject constructor() :
             txtNameValue.text = character.name
             txtSpeciesValue.text = character.species
             txtGenderValue.text = character.gender
-//            Glide.with(itemView)
-//                .load(user.avatar_url)
-//                .centerCrop()
-//                .circleCrop()
-//                .into(imgAvatar)
-
             clUser.setOnClickListener {
                 onItemClickListener?.invoke(character)
             }

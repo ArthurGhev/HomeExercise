@@ -11,7 +11,7 @@ class CharacterUiMapper @Inject constructor() : Mapper<CharacterEntityModel, Cha
             id = i?.id,
             name = i?.name,
             species = i?.species,
-            gender = i?.species,
+            gender = i?.gender,
             image = i?.image
         )
     }
@@ -21,7 +21,7 @@ class CharacterUiMapper @Inject constructor() : Mapper<CharacterEntityModel, Cha
             id = o?.id,
             name = o?.name,
             species = o?.species,
-            gender = o?.species,
+            gender = o?.gender,
             image = o?.image
         )
     }

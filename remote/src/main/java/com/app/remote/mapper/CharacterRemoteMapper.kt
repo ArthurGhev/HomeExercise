@@ -11,7 +11,7 @@ class CharacterRemoteMapper @Inject constructor() : Mapper<ResultsModel, Charact
             id = i?.id,
             name = i?.name,
             species = i?.species,
-            gender = i?.species,
+            gender = i?.gender,
             image = i?.image
         )
     }
@@ -23,7 +23,7 @@ class CharacterRemoteMapper @Inject constructor() : Mapper<ResultsModel, Charact
             status = null,
             species = o?.species,
             type = null,
-            gender = o?.species,
+            gender = o?.gender,
             origin = null,
             location = null,
             image = o?.image,
