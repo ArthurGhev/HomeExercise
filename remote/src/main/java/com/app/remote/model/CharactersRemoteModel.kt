@@ -3,13 +3,12 @@ package com.app.remote.model
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-//name, species, and gender
 @Serializable
 data class CharactersModel(
     @SerialName("info")
     val info: InfoBean,
     @SerialName("results")
-    val resultsBean: List<ResultsModel>
+    val results: List<ResultsModel>
 )
 
 @Serializable

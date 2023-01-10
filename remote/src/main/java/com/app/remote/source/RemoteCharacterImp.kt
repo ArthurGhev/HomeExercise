@@ -13,10 +13,9 @@ class RemoteCharacterImp @Inject constructor(
 ) : RemoteCharacterSource{
 
     override suspend fun getCharacters(page: Int): List<CharacterDataModel> {
-        return getCharacterMapper.fromList(apiService.getCharacter(page).resultsBean)
-    }
+        val aa = apiService.getCharacter(page)
+        val bb = aa.results
 
-    override suspend fun getCharacter(name: String): CharacterDataModel {
-        TODO("Not yet implemented")
+        return getCharacterMapper.fromList(bb)
     }
 }

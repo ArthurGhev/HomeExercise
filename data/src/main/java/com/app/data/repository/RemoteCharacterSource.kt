@@ -4,6 +4,4 @@ import com.app.data.model.CharacterDataModel
 
 interface RemoteCharacterSource  {
     suspend fun getCharacters(page: Int) : List<CharacterDataModel>
-
-    suspend fun getCharacter(name: String) : CharacterDataModel
 }
