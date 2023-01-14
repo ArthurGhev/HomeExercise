@@ -11,7 +11,6 @@ class CharacterRepositoryImpl @Inject constructor(
     private val userMapper: Mapper<CharacterDataModel, CharacterEntityModel>
     ) : CharacterRepository{
     override suspend fun getCharacterPaging(page: Int): List<CharacterEntityModel> {
-        val aaa = remoteUserSource.getCharacters(page)
-        return userMapper.fromList(aaa)
+        return userMapper.fromList(remoteUserSource.getCharacters(page))
     }
 }
